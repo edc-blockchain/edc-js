@@ -47,7 +47,7 @@ The auths object should contain the auth arrays from the account object. An exam
 }
 ```
 
-If checkKeys is successful, you can use signTransaction to sign a TransactionBuilder transaction using the private keys for that account.
+If checkKeys is successful, you can use signTransaction to sign a TransactionBuilder transaction using the private keys for that account...
 
 #### State container
 The Chain library contains a complete state container called the ChainStore. The ChainStore will automatically configure the `set_subscribe_callback` and handle any incoming state changes appropriately. It uses Immutable.js for storing the state, so all objects are return as immutable objects. It has its own `subscribe` method that can be used to register a callback that will be called whenever a state change happens.
