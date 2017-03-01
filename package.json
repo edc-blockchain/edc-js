@@ -1,6 +1,6 @@
 {
   "name": "edinarlib-js",
-  "version": "0.4.20",
+  "version": "0.5.1",
   "description": "Pure JavaScript EdinarCoin library for node.js and browsers.",
   "browser": {
     "ws": false,
@@ -14,8 +14,8 @@
     "test:watch": "npm test -- --watch",
     "clean": "rm -rf ./dist/* & rm -rf ./build/*",
     "prebuild": "npm run clean",
-    "build": "babel lib --out-dir dist",
-    "build:watch": "babel lib --out-dir dist --watch",
+		"build": "babel lib --presets babel-preset-es2015 --out-dir dist",
+		"build:watch": "babel lib --presets babel-preset-es2015 --out-dir dist --watch",
     "prebrowserify": "rm -rf ./build/*",
     "browserify": "browserify --full-paths dist/browser.js --standalone steemJS -o build/edinarlib-js.js -d",
     "postbrowserify": "uglifyjs --compress --mangle --sequences --drop_console --output build/edinarlib-js.min.js -- build/edinarlib-js.js",
