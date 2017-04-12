@@ -14,8 +14,8 @@
     "test:watch": "npm test -- --watch",
     "clean": "rm -rf ./dist/* & rm -rf ./build/*",
     "prebuild": "npm run clean",
-		"build": "babel lib --presets babel-preset-es2015 --out-dir dist",
-		"build:watch": "babel lib --presets babel-preset-es2015 --out-dir dist --watch",
+    "build": "babel lib --presets babel-preset-es2015 --out-dir dist",
+    "build:watch": "babel lib --presets babel-preset-es2015 --out-dir dist --watch",
     "prebrowserify": "rm -rf ./build/*",
     "browserify": "browserify --full-paths dist/browser.js --standalone steemJS -o build/edinarlib-js.js -d",
     "postbrowserify": "uglifyjs --compress --mangle --sequences --drop_console --output build/edinarlib-js.min.js -- build/edinarlib-js.js",
@@ -49,9 +49,10 @@
     "crypto-js": "^3.1.5",
     "deep-equal": "^1.0.1",
     "ecurve": "^1.0.2",
-    "event-emitter": "^0.3.4",
     "edinar-ws-js": "^0.1.1",
+    "event-emitter": "^0.3.4",
     "immutable": "^3.7.6",
+    "moment": "^2.18.1",
     "secure-random": "^1.1.1"
   },
   "devDependencies": {
