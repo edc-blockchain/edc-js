@@ -1,6 +1,6 @@
 {
   "name": "edinarlib-js",
-  "version": "0.5.22",
+  "version": "0.5.24",
   "description": "Pure JavaScript EdinarCoin library for node.js and browsers.",
   "browser": {
     "ws": false,
