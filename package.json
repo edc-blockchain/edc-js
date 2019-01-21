@@ -1,6 +1,6 @@
 {
-  "name": "edinarlib-js",
-  "version": "0.6.15",
+  "name": "edinarcoin",
+  "version": "0.6.17",
   "description": "Pure JavaScript EdinarCoin library for node.js and browsers.",
   "browser": {
     "ws": false,
@@ -17,14 +17,14 @@
     "build": "babel lib --presets es2015-generators-async --out-dir dist",
     "build:watch": "babel lib --presets es2015-generators-async --out-dir dist --watch",
     "prebrowserify": "rm -rf ./build/*",
-    "browserify": "browserify --full-paths dist/browser.js --standalone steemJS -o build/edinarlib-js.js -d",
-    "postbrowserify": "uglifyjs --compress --mangle --sequences --drop_console --output build/edinarlib-js.min.js -- build/edinarlib-js.js",
+    "browserify": "browserify --full-paths dist/browser.js --standalone steemJS -o build/edinarcoin.js -d",
+    "postbrowserify": "uglifyjs --compress --mangle --sequences --drop_console --output build/edinarcoin.min.js -- build/edinarcoin.js",
     "prepublish": "npm run build",
     "doc": "esdoc -c esdoc.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edinar-developer/edinarlib-js"
+    "url": "git+https://github.com/edinar1/edinarcoin-js"
   },
   "author": "Sigve Kvalsvik <bitsharesblocks@gmail.com> (https://github.com/svk31)",
   "contributors": [
@@ -34,7 +34,7 @@
   ],
   "license": "BSD-2-Clause-FreeBSD",
   "bugs": {
-    "url": "https://github.com/edinar-developer/edinarlib-js/issues"
+    "url": "https://github.com/edinar1/edinarcoin-js/issues"
   },
   "engines": {
     "node": ">= 6.0.0"
@@ -50,7 +50,7 @@
     "crypto-js": "^3.1.8",
     "deep-equal": "^1.0.1",
     "ecurve": "^1.0.2",
-    "edinar-ws-js": "^0.1.8",
+    "edinarcoin-ws": "^0.1.9",
     "event-emitter": "^0.3.4",
     "immutable": "^3.7.6",
     "moment": "^2.18.1",
@@ -64,7 +64,7 @@
     "babel-eslint": "^6.0.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2015-generators-async": "^6.3.13",
-    "browserify": "^13.1.0",
+    "browserify": "^16.2.3",
     "esdoc": "^0.4.3",
     "mocha": "^2.5.3",
     "uglifyjs": "^2.4.10"
