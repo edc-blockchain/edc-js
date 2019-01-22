@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edinar1/edinarcoin-js"
+    "url": "git+https://github.com/e-dinar/edinarcoin-js.git"
   },
   "author": "Sigve Kvalsvik <bitsharesblocks@gmail.com> (https://github.com/svk31)",
   "contributors": [
@@ -34,7 +34,7 @@
   ],
   "license": "BSD-2-Clause-FreeBSD",
   "bugs": {
-    "url": "https://github.com/edinar1/edinarcoin-js/issues"
+    "url": "https://github.com/e-dinar/edinarcoin-js/issues"
   },
   "engines": {
     "node": ">= 6.0.0"
