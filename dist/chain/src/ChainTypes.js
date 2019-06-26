@@ -1,4 +1,6 @@
-let ChainTypes = {};
+"use strict";
+
+var ChainTypes = {};
 
 ChainTypes.reserved_spaces = {
 	relative_protocol_ids: 0,

@@ -1,6 +1,6 @@
 {
   "name": "edinarcoin",
-  "version": "0.6.29",
+  "version": "0.6.30",
   "description": "Pure JavaScript EdinarCoin library for node.js and browsers.",
   "browser": {
     "ws": false,
@@ -19,7 +19,7 @@
     "prebrowserify": "rm -rf ./build/*",
     "browserify": "browserify --full-paths dist/browser.js --standalone steemJS -o build/edinarcoin.js -d",
     "postbrowserify": "uglifyjs --compress --mangle --sequences --drop_console --output build/edinarcoin.min.js -- build/edinarcoin.js",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "doc": "esdoc -c esdoc.json"
   },
   "repository": {
