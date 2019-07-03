@@ -983,9 +983,18 @@ var enable_autorenewal_deposits = new Serializer("enable_autorenewal_deposits", 
 	extensions: set(future_extensions)
 });
 
+var blind_transfer2 = new Serializer("blind_transfer2", {
+	fee: asset,
+	from: protocol_id_type("account"),
+	to: protocol_id_type("account"),
+	amount: asset,
+	memo: optional(memo_data),
+	extensions: set(future_extensions)
+});
+
 operation.st_operations = [transfer, limit_order_create, limit_order_cancel, call_order_update, fill_order, account_create, account_update, account_whitelist, account_upgrade, account_transfer, asset_create, asset_update, asset_update_bitasset, asset_update_feed_producers, asset_issue, asset_reserve, asset_fund_fee_pool, asset_settle, asset_global_settle, asset_publish_feed, witness_create, witness_update, proposal_create, proposal_update, proposal_delete, withdraw_permission_create, withdraw_permission_update, withdraw_permission_claim, withdraw_permission_delete, committee_member_create, committee_member_update, committee_member_update_global_parameters, vesting_balance_create, vesting_balance_withdraw, worker_create, custom, assert, balance_claim, override_transfer, transfer_to_blind, blind_transfer, transfer_from_blind, asset_settle_cancel, asset_claim_fees, bonus_operation, asset_claim_fees_operation, asset_daily_bonus, asset_referrals_bonus, edc_asset_fund_fee_pool, account_restrict, account_allow_referrals, set_online_time_operation, set_verification_is_required_operation, allow_create_asset, add_address, account_create, fund_create, fund_update, fund_refill, fund_deposit, fund_withdrawal, fund_payment, fund_set_enable, fund_deposit_set_enable, fund_remove, enable_autorenewal_deposits, fund_remove, //64
-null, null, null, enable_autorenewal_deposits //70
-];
+null, null, null, enable_autorenewal_deposits, //70
+null, blind_transfer2];
 
 var transaction = new Serializer("transaction", {
 	ref_block_num: uint16,
