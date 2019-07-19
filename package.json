@@ -1,6 +1,6 @@
 {
   "name": "edinarcoin",
-  "version": "0.6.38",
+  "version": "0.6.39",
   "description": "Pure JavaScript EdinarCoin library for node.js and browsers.",
   "browser": {
     "ws": false,
@@ -13,7 +13,7 @@
     "test:serializer": "mocha --compilers js:babel-core/register ./test/serializer --recursive",
     "test:watch": "npm test -- --watch",
     "clean": "rm -rf ./dist/* & rm -rf ./build/*",
-    "prebuild": "npm run clean",
+    "presbuild": "npm run clean",
     "build": "babel lib --presets es2015-generators-async --out-dir dist",
     "build:watch": "babel lib --presets es2015-generators-async --out-dir dist --watch",
     "prebrowserify": "rm -rf ./build/*",
