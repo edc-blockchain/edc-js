@@ -1,6 +1,6 @@
 {
   "name": "edinarcoin",
-  "version": "0.6.46",
+  "version": "0.6.47",
   "description": "Pure JavaScript EdinarCoin library for node.js and browsers.",
   "browser": {
     "ws": false,
@@ -50,7 +50,7 @@
     "crypto-js": "^3.1.8",
     "deep-equal": "^1.0.1",
     "ecurve": "^1.0.2",
-    "edinarcoin-ws": "^0.1.17",
+    "edinarcoin-ws": "^0.1.18",
     "event-emitter": "^0.3.4",
     "immutable": "^3.7.6",
     "moment": "^2.18.1",
