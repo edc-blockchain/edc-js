@@ -1,18 +1,18 @@
-# EdinarCoinJS (edinarcoin)
+# EDC Blockchain JS (edc-js)
 
-Pure JavaScript Edinarcoin library for node.js and browsers. Can be used to construct, sign and broadcast transactions in JavaScript, and to easily obtain data from the blockchain via public apis.
+Pure JavaScript EDC Blockchain library for Node.js and browsers. Can be used to construct, sign and broadcast transactions in JavaScript, and to easily obtain data from the blockchain via public apis.
 
 Most of this code was written by [jcalfeee](https://github.com/jcalfee), my work was mostly just repackaging to a discrete npm package.
 
-[![npm version](https://img.shields.io/npm/v/edinarcoin.svg?style=flat-square)](https://www.npmjs.com/package/edinarcoin)
-[![npm downloads](https://img.shields.io/npm/dm/edinarcoin.svg?style=flat-square)](https://www.npmjs.com/package/edinarcoin)
+[![npm version](https://img.shields.io/npm/v/edc-js.svg?style=flat-square)](https://www.npmjs.com/package/edc-js)
+[![npm downloads](https://img.shields.io/npm/dm/edc-js.svg?style=flat-square)](https://www.npmjs.com/package/edc-js)
 
 
 ## Setup
 
 This library can be obtained through npm:
 ```
-npm install edinarcoin
+npm install edc-js
 ```
 
 ## Usage
@@ -55,8 +55,8 @@ The Chain library contains a complete state container called the ChainStore. The
 The ChainStore has several useful methods to retrieve, among other things, objects, assets and accounts using either object ids or asset/account names. These methods are synchronous and will return `undefined` to indicate fetching in progress, and `null` to indicate that the object does not exist.
 
 ```
-var {Apis} = require("edinarcoin-ws");
-var {ChainStore} = require("edinarcoin");
+var {Apis} = require("edc-ws-js");
+var {ChainStore} = require("edc-js");
 
 Apis.instance("wss://bitshares.openledger.info/ws", true).init_promise.then((res) => {
     console.log("connected to:", res[0].network);
@@ -80,7 +80,7 @@ The ECC library contains all the crypto functions for private and public keys as
 As a quick example, here's how to generate a new private key from a seed (a brainkey for example):
 
 ```
-var {PrivateKey, key} = require("edinarcoin");
+var {PrivateKey, key} = require("edc-js");
 
 let seed = "THIS IS A TERRIBLE BRAINKEY SEED WORD SEQUENCE";
 let pkey = PrivateKey.fromSeed( key.normalize_brainKey(seed) );
