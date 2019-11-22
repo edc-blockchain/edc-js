@@ -561,6 +561,12 @@ var ChainStore = function () {
 				return undefined;
 			}
 		}
+
+		/**
+   * @param {Array<strings>} keys - array of public keys
+   * @return {Array<string | undefined>} id - [1.11.123213, undefined, undefined]
+   */
+
 	}, {
 		key: "getAccountsIdByKeys",
 		value: function () {
@@ -576,7 +582,9 @@ var ChainStore = function () {
 					});
 					return cachedKeys;
 				}
-				return Apis.instance().db_api().exec('get_key_references', [keys]);
+				var account_ids = yield Apis.instance().db_api().exec('get_key_references', [keys]);
+				this.cacheAccountIdsAndRefs(account_ids, keys);
+				return account_ids;
 			});
 
 			function getAccountsIdByKeys(_x2) {
@@ -586,21 +594,25 @@ var ChainStore = function () {
 			return getAccountsIdByKeys;
 		}()
 	}, {
+		key: "cacheAccountIdsAndRefs",
+		value: function cacheAccountIdsAndRefs(account_ids, pubkeys) {
+			var _this9 = this;
+
+			account_ids.forEach(function (id, index) {
+				var ref = Immutable.Set(id[0] ? [id[0]] : []);
+				if (!_this9.get_account_refs_of_keys_calls.has(pubkeys[index])) {
+					_this9.get_account_refs_of_keys_calls = _this9.get_account_refs_of_keys_calls.add(pubkeys[index]);
+				}
+				_this9.account_ids_by_key = _this9.account_ids_by_key.set(pubkeys[index], ref);
+			});
+		}
+	}, {
 		key: "getFirstAccountIdByKeys",
 		value: function () {
 			var _ref16 = (0, _bluebird.coroutine)(function* (keys) {
-				var _this9 = this;
-
 				var noNotify = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
 				var account_ids = yield this.getAccountsIdByKeys(keys);
-				account_ids.forEach(function (id, index) {
-					var ref = Immutable.Set(id[0] ? [id[0]] : []);
-					if (!_this9.get_account_refs_of_keys_calls.has(keys[index])) {
-						_this9.get_account_refs_of_keys_calls = _this9.get_account_refs_of_keys_calls.add(keys[index]); // for getAccountRefsOfKey (but cache is cleared before it)
-					}
-					_this9.account_ids_by_key = _this9.account_ids_by_key.set(keys[index], ref);
-				});
 				if (!noNotify) {
 					this.notifySubscribers();
 				}
