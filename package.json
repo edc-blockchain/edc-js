@@ -1,6 +1,6 @@
 {
   "name": "edc-js",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "description": "Pure JavaScript EDC Blockchain library for Node.js and browsers.",
   "browser": {
     "ws": false,
@@ -51,7 +51,7 @@
     "crypto-js": "^3.1.9-1",
     "deep-equal": "^1.1.1",
     "ecurve": "^1.0.2",
-    "edc-ws-js": "^0.3.6",
+    "edc-ws-js": "^0.2.5",
     "event-emitter": "^0.3.4",
     "immutable": "^4.0.0-rc.12",
     "moment": "^2.24.0",
