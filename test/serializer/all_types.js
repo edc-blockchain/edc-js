@@ -8,7 +8,7 @@ var {
     //varint32,
     uint8, uint16, uint32, int64, uint64,
     string, bytes, bool, array, fixed_array,
-    protocol_id_type, object_id_type, vote_id,
+    protocol_id_type, impl_id_type, object_id_type, vote_id,
     // future_extensions,
     static_variant, map, set,
     public_key, address,
